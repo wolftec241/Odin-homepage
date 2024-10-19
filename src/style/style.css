@@ -1,0 +1,206 @@
+*{
+    --nav-color:#0c4a6e;
+    --nav-color-rgb: 12, 74, 110;
+    --nav-text-color:white;
+    --about-background-color:#0284c7;
+    --projects-background-color:#0ea5e9;
+    --contacts-background-color:#0369a1;
+    --rem:16px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    min-width: 360px;
+}
+
+nav{
+    background:linear-gradient( 
+        180deg, 
+        rgba(var(--nav-color-rgb), 0.8) 0%, 
+        rgba(var(--nav-color-rgb), 0.5) 25%, 
+        rgba(var(--nav-color-rgb), 0.5) 75%, 
+        rgba(var(--nav-color-rgb), 0.6) 100% 
+        );
+    margin: 0;
+    padding: 5px;
+    position: fixed; /* Sticks the navbar to the top */
+    top: 0; /* Positions it at the top */
+    left: 0; /* Aligns it to the left */
+    width: 100%; /* Full width */
+    z-index: 1000;/* Ensures it stays on top of other content */
+
+}
+
+nav > ul{
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 16rem;
+    font-family: SpicyRice,"DM Serif Display", serif;
+    font-size: calc(1.2rem + 0.7vw);
+    
+}
+
+a{
+    text-decoration: none;
+    border: none;
+    color:var(--nav-text-color) ;
+}
+
+li{
+    transition: 500ms;
+}
+
+li:hover{
+    transform: scale(1.4);
+    text-shadow: 0 0 10px white;
+}
+
+section{
+    height: 100dvh;
+    padding-block: 10px;
+}
+
+#about{
+    background-color: var(--about-background-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-main{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.about-info{
+    min-width: 350px;
+    justify-self: center;
+}
+
+.about-info > h1{
+    font-size: 3rem;
+    margin-block: 1rem;
+}
+
+.about-info > h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-info-icons{
+    display: flex;
+    gap: 50px;
+}
+
+.icons{
+    width: 50px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.icons:hover{
+    transform: rotate(360deg); 
+}
+
+.about-icon > img{
+    width: 450px;
+    height: 450px;
+}
+
+#typewriter {
+    font-size: 2rem;
+    border-right: 2px solid black;
+    padding-right: 5px;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+#projects{
+    background-color: var(--projects-background-color);
+    color: white;
+}
+
+#contacts{
+   background-color: var(--contacts-background-color); 
+   color: white;
+}
+
+
+/* Animations */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}
+
+
+/* Media Control */
+@media screen and (max-width: 1200px ){
+    nav > ul{
+        gap: 10rem;
+    }
+
+    .about-icon > img{
+        height: 340px;
+        width: 340px;
+    }
+}
+
+@media screen and (max-width: 800px ) {
+
+    nav > ul{
+        gap: 6rem;
+    }
+
+    .about-main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-info{
+        height: 45dvh;
+    }
+
+    .about-info > h2{
+        height: 10dvh;
+    }
+
+    .about-icon > img{
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media  screen and (max-width: 450px) {
+
+    nav > ul{
+        gap: 2rem;
+    }
+
+}
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'SpicyRice';
+    src: url('fonts/SpicyRice-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
